@@ -10,11 +10,11 @@ gini_impurity <- 1 - x ^ 2 - (1-x) ^ 2
 
 # Plot the distribution of entropy first.
 plot(x, entropy, type="l", col="red", 
-	 xlab = "probability", ylab="Gini impurity / Entropy", lty=1)
+	 xlab = "probability", ylab="Gini impurity / Entropy", lty=1, ylim=c(0, 0.7))
 
 # Plot the gini_impurity further.
 lines(x, gini_impurity, col="blue", lty=20)
 
-legend(0.01, 0.7, c("Entropy", "Gini Impurity"),
+legend(0.32, 0.25, c("Entropy", "Gini Impurity"),
 	col=c("red", "blue"), lty=c(1, 20))
 
