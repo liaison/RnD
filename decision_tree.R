@@ -1,7 +1,10 @@
 
+# from the course "R programming" given by Johns Hopkins University in the site coursera.com
+
 library(ggplot2)
 library(caret)
 
+# existing data set from R
 data(iris)
 
 inTrain <- createDataPartition(y=iris$Species, p=0.7, list=FALSE)

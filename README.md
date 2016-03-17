@@ -1,2 +1,5 @@
-# RnD
-programming in R 
+# RnD ( R and development )
+
+programming in R
+
+
