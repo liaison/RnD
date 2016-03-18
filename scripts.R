@@ -16,3 +16,42 @@ fibonacci_rec <- function(prev=1, acc=1, n=1) {
 }
 
 
+##  Data Structure ## 
+
+## vector
+cells <- c(1, 2, 3, 4)
+rnames <- c("R1", "R2")
+cnames <- c("C1", "C2")
+
+## matrix
+mymatrix <- matrix(cells, nrow=2, ncol=2, byrow=TRUE, dimnames=list(rnames, cnames))
+
+
+dim1 <- c("A1", "A2")
+dim2 <- c("B1", "B2", "B3")
+dim3 <- c("C1", "C2", "C3", "C4")
+
+## array
+z <- array(1:24, c(2, 3, 4), dimnames=list(dim1, dim2, dim3))
+
+## data frame
+
+patientID <- c(1:4)
+
+status <- c("Poor", "Improved", "Excellent", "Poor")
+
+
+patientData <- data.frame(patientID, status)
+
+
+
+## List
+
+
+g <- "My first list"
+h <- c(25, 26, 18, 39)
+j <- matrix(1:10, nrow=5)
+k <- c("one", "two", "three")
+
+mylist <- list(title=g, ages=h, j, k)
+
