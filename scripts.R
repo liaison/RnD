@@ -43,10 +43,18 @@ status <- c("Poor", "Improved", "Excellent", "Poor")
 
 patientData <- data.frame(patientID, status)
 
+# descript the structure of the data frame.
+str(patientData)
 
+## factor (nomial or ordinal)
+
+ordinal.status <- factor(status, order=TRUE)
+
+# specify the order of the levels.
+sex <- factor(c("male", "female"), order=TRUE, levels=c("female", "male"))
 
 ## List
-
+# the data structure of list is more like the concept of tuple in other domains.
 
 g <- "My first list"
 h <- c(25, 26, 18, 39)
