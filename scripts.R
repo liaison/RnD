@@ -16,12 +16,18 @@ fibonacci_rec <- function(prev=1, acc=1, n=1) {
 }
 
 
-##  Data Structure ## 
+###########################################
+#           basic data structures 
+###########################################
+
 
 ## vector
 cells <- c(1, 2, 3, 4)
 rnames <- c("R1", "R2")
 cnames <- c("C1", "C2")
+
+# the indice of the elements start from one.
+value1 <- cells[1]
 
 ## matrix
 mymatrix <- matrix(cells, nrow=2, ncol=2, byrow=TRUE, dimnames=list(rnames, cnames))
@@ -40,11 +46,15 @@ patientID <- c(1:4)
 
 status <- c("Poor", "Improved", "Excellent", "Poor")
 
-
 patientData <- data.frame(patientID, status)
 
-# descript the structure of the data frame.
+# describe the structure of the data frame.
 str(patientData)
+
+# the reference of the columns/variables within a data frame.
+col.status <- patientData[[2]]
+col.status <- patientData$status
+
 
 ## factor (nomial or ordinal)
 
@@ -62,4 +72,21 @@ j <- matrix(1:10, nrow=5)
 k <- c("one", "two", "three")
 
 mylist <- list(title=g, ages=h, j, k)
+
+# reference of elements within a data frame
+elem.ages <- mylist[[2]]
+
+elem.title <-mylist[["title"]]
+
+
+
+###########################################
+#             Data source 
+###########################################
+
+
+
+
+
+
 
