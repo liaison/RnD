@@ -26,6 +26,24 @@ cells <- c(1, 2, 3, 4)
 rnames <- c("R1", "R2")
 cnames <- c("C1", "C2")
 
+
+
+nums <- seq(1:100)
+
+# exclude the first 5 elements
+exclude.nums <- nums[-(1:5)]
+exclude.nums
+
+# the gap in the vector would be filled with NA (not available)
+nums[102] <- 1
+nums
+
+
+# retrieve all the even number from a vector that contains NA.
+even.nums <- nums[ !is.na(nums) & nums %% 2 == 0 ]
+even.nums
+
+
 # the indice of the elements start from one.
 value1 <- cells[1]
 
