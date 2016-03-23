@@ -1,19 +1,10 @@
-
-
-# Function to calculate the fibonacci number
-fibonacci <- function(n) {
-  if(n == 0) return (1)
-
-  fibonacci_rec(1, 1, n)
-}
-
-
-fibonacci_rec <- function(prev=1, acc=1, n=1) {
-  if(n == 1) return (acc)
-  else {
-    fibonacci_rec(acc, acc+prev, n-1)
-  }
-}
+#
+#
+# This script is intended to be "learning R in 5 minutes" show-case program.
+#
+#  It could teach a developer to quickly load the syntax rules of R into mind.
+#
+#
 
 
 ###########################################
@@ -48,6 +39,7 @@ even.nums
 value1 <- cells[1]
 
 ## matrix
+# by default, the matrix is constructed by column.
 mymatrix <- matrix(cells, nrow=2, ncol=2, byrow=TRUE, dimnames=list(rnames, cnames))
 
 
@@ -72,7 +64,7 @@ str(patientData)
 # the reference of the columns/variables within a data frame.
 col.status <- patientData[[2]]
 col.status <- patientData$status
-
+col.status
 
 ## factor (nomial or ordinal)
 
@@ -97,6 +89,19 @@ elem.ages <- mylist[[2]]
 elem.title <-mylist[["title"]]
 
 
+###########################################
+#      basic data type conversion 
+###########################################
+
+z <- 0:9
+# convert the integer into character
+digits <- as.character(z)
+digits
+
+# convert the character into integer
+ints <- as.integer(digits)
+ints
+
 
 ###########################################
 #             Data source 
@@ -115,7 +120,7 @@ mydata.txt <- "
 "
 
 mydata <- read.table(header=TRUE, text=mydata.txt)
-
+mydata
 
 
 
