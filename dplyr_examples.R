@@ -1,6 +1,5 @@
 
 #
-#
 #  Some examples to show how to use the APIs in the package dplyr.
 #
 library(dplyr)
@@ -56,12 +55,16 @@ sort_arr_time <- arrange(flights, desc(arr_time))
 ############  data transformation  ############ 
 
 # add new columns to the origin ones.
-new.dataset <- mutate(flights, gain = arr_delay - dep_delay, speed = distance / air_time * 60)
+new.dataset <- mutate(flights,
+                      gain = arr_delay - dep_delay,
+                      speed = distance / air_time * 60)
 
 
 
 # keep only the new columns
-transmute(flights, gain = arr_delay - dep_delay, speed = distance / air_time * 60)
+transmute(flights,
+          gain = arr_delay - dep_delay,
+          speed = distance / air_time * 60)
 
 
 
@@ -73,7 +76,8 @@ summarise(group_by(flights, carrier), mean(arr_delay, na.rm = TRUE))
 
 
 #  x %>% f(y)  ==  f(x, y)
-#  The syntax sugar from dplyr that shows the order of operation from left to right.
+#  The syntax sugar from dplyr that shows the order of operations
+#    from left to right.
 
 flights %>%
   group_by(year, month, day)  %>%
