@@ -25,6 +25,9 @@ nums <- seq(1:100)
 exclude.nums <- nums[-(1:5)]
 exclude.nums
 
+# truncate the vector 
+length(nums) <- 90
+
 # the gap in the vector would be filled with NA (not available)
 nums[102] <- 1
 nums
@@ -41,6 +44,10 @@ value1 <- cells[1]
 ## matrix
 # by default, the matrix is constructed by column.
 mymatrix <- matrix(cells, nrow=2, ncol=2, byrow=TRUE, dimnames=list(rnames, cnames))
+
+# show attributes that are associated with an object.
+attributes(mymatrix)
+# one can change the value of a specific attribute with attr(obj, attrName) <- value
 
 
 dim1 <- c("A1", "A2")
@@ -93,10 +100,17 @@ elem.title <-mylist[["title"]]
 #      basic data type conversion 
 ###########################################
 
+# an empty numeric vector
+emptyNum <- numeric()
+emptyNum
+
+
 z <- 0:9
+z
 # convert the integer into character
 digits <- as.character(z)
 digits
+
 
 # convert the character into integer
 ints <- as.integer(digits)
@@ -109,8 +123,10 @@ ints
 
 mydata <- data.frame(age=numeric(0), gender=character(0), weight=numeric(0))
 
+# edit the values of a data frame with the following APIs.
 # mydata <- edit(mydata)
 # fix(mydata)
+
 
 mydata.txt <- "
   age gender weight
@@ -121,6 +137,7 @@ mydata.txt <- "
 
 mydata <- read.table(header=TRUE, text=mydata.txt)
 mydata
+
 
 
 
