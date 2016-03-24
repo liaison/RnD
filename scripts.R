@@ -30,7 +30,8 @@ cnames <- c("C1", "C2")
 value1 <- cells[1]
 
 ## matrix
-mymatrix <- matrix(cells, nrow=2, ncol=2, byrow=TRUE, dimnames=list(rnames, cnames))
+mymatrix <- matrix(cells, nrow=2, ncol=2, 
+  byrow=TRUE, dimnames=list(rnames, cnames))
 
 
 dim1 <- c("A1", "A2")
@@ -61,10 +62,12 @@ col.status <- patientData$status
 ordinal.status <- factor(status, order=TRUE)
 
 # specify the order of the levels.
-sex <- factor(c("male", "female"), order=TRUE, levels=c("female", "male"))
+sex <- factor(c("male", "female"), order=TRUE, 
+              levels=c("female", "male"))
 
 ## List
-# the data structure of list is more like the concept of tuple in other domains.
+# the data structure of list is more like 
+#   the concept of tuple in other domains.
 
 g <- "My first list"
 h <- c(25, 26, 18, 39)
@@ -84,7 +87,9 @@ elem.title <-mylist[["title"]]
 #             Data source 
 ###########################################
 
-mydata <- data.frame(age=numeric(0), gender=character(0), weight=numeric(0))
+mydata <- data.frame(age=numeric(0),
+                     gender=character(0),
+                     weight=numeric(0))
 
 # mydata <- edit(mydata)
 # fix(mydata)
