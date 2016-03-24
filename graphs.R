@@ -31,7 +31,12 @@ legend(0.32, 0.25, c("Entropy", "Gini Impurity"),
 pdf("mtcars.pdf")
 
 attach(mtcars)
+
 plot(wt, mpg)
+
+# add labels to each point on the graph.
+text(wt, mpg, row.names(mtcars), cex=.6, pos=4, col="red")
+
 abline(lm(mpg ~ wt))
 title("Regression of MPG on Weight")
 detach(mtcars)
@@ -69,7 +74,30 @@ plot(dose, drugA, type="b", col="red",
 par(oldPars)
 
 # return the list of colors
-colors()
+# colors()
+
+
+################
+# Put multiple graphs into one layout
+attach(mtcars)
+oldPars <- par(no.readonly = TRUE)
+
+# create a graph layout of 2 columns and 2 rows.
+par(mfrow=c(2, 2))
+
+plot(wt, mpg, main="Scatterplot of wt vs. mpg")
+plot(wt, disp, main="Scatterplot of wt vs. disp")
+hist(wt, main="Histogram of wt")
+boxplot(wt, main="Boxplot of wt")
+
+par(oldPars)
+
+detach(mtcars)
+################
+
+
+
+
 
 
 
