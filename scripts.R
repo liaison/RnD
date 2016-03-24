@@ -1,19 +1,10 @@
-
-
-# Function to calculate the fibonacci number
-fibonacci <- function(n) {
-  if(n == 0) return (1)
-
-  fibonacci_rec(1, 1, n)
-}
-
-
-fibonacci_rec <- function(prev=1, acc=1, n=1) {
-  if(n == 1) return (acc)
-  else {
-    fibonacci_rec(acc, acc+prev, n-1)
-  }
-}
+#
+#
+# This script is intended to be "learning R in 5 minutes" show-case program.
+#
+#  It could teach a developer to quickly load the syntax rules of R into mind.
+#
+#
 
 
 ###########################################
@@ -26,12 +17,38 @@ cells <- c(1, 2, 3, 4)
 rnames <- c("R1", "R2")
 cnames <- c("C1", "C2")
 
+
+
+nums <- seq(1:100)
+
+# exclude the first 5 elements
+exclude.nums <- nums[-(1:5)]
+exclude.nums
+
+# truncate the vector 
+length(nums) <- 90
+
+# the gap in the vector would be filled with NA (not available)
+nums[102] <- 1
+nums
+
+
+# retrieve all the even number from a vector that contains NA.
+even.nums <- nums[ !is.na(nums) & nums %% 2 == 0 ]
+even.nums
+
+
 # the indice of the elements start from one.
 value1 <- cells[1]
 
 ## matrix
+# by default, the matrix is constructed by column.
 mymatrix <- matrix(cells, nrow=2, ncol=2, 
   byrow=TRUE, dimnames=list(rnames, cnames))
+
+# show attributes that are associated with an object.
+attributes(mymatrix)
+# one can change the value of a specific attribute with attr(obj, attrName) <- value
 
 
 dim1 <- c("A1", "A2")
@@ -55,7 +72,7 @@ str(patientData)
 # the reference of the columns/variables within a data frame.
 col.status <- patientData[[2]]
 col.status <- patientData$status
-
+col.status
 
 ## factor (nomial or ordinal)
 
@@ -82,6 +99,26 @@ elem.ages <- mylist[[2]]
 elem.title <-mylist[["title"]]
 
 
+###########################################
+#      basic data type conversion 
+###########################################
+
+# an empty numeric vector
+emptyNum <- numeric()
+emptyNum
+
+
+z <- 0:9
+z
+# convert the integer into character
+digits <- as.character(z)
+digits
+
+
+# convert the character into integer
+ints <- as.integer(digits)
+ints
+
 
 ###########################################
 #             Data source 
@@ -91,8 +128,10 @@ mydata <- data.frame(age=numeric(0),
                      gender=character(0),
                      weight=numeric(0))
 
+# edit the values of a data frame with the following APIs.
 # mydata <- edit(mydata)
 # fix(mydata)
+
 
 mydata.txt <- "
   age gender weight
@@ -102,6 +141,7 @@ mydata.txt <- "
 "
 
 mydata <- read.table(header=TRUE, text=mydata.txt)
+mydata
 
 
 
