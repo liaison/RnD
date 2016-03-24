@@ -15,10 +15,6 @@ dim(flights)
 head(flights)
 
 
-
-head(res)
-
-
 ############ data filtering 
 
 # select the specific columns
@@ -38,24 +34,40 @@ head(exclude_date)
 filter(flights, month == 1 | day == 1, carrier=="UA")
 
 
+# extract the distinct rows
+tailnum <- distinct(select(flights, tailnum))
+
+str(tailnum)
+
+
+
 ############ data ordering
 
-# sort the rows in place.
-arrange(flights, dep_time)
+# sort the rows, by default, the asscending order.
+sort_dep_time <- arrange(flights, dep_time)
+
+
+# sort the arr_time row in the descending order.
+arrange(flights, desc(arr_time))
+
+
+
+############  data transformation
+
+# add new columns to the origin ones.
+mutate(flights, gain = arr_delay - dep_delay, speed = distance / air_time * 60)
+
+
+# keep only the new columns
+transmute(flights, gain = arr_delay - dep_delay, speed = distance / air_time * 60)
 
 
 
 
+############  statistics
 
 
-
-
-
-
-
-
-
-
+summarise(, flights, mean(arr_delay))
 
 
 
