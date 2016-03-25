@@ -151,6 +151,34 @@ difftime(today, mydate, units="weeks")
 
 
 ###########################################
+#           math functions
+###########################################
+
+x <- 1:8
+
+mx <- mean(x)
+
+# the length / size of a vector
+n <- length(x)
+
+css <- sum((x-mx)^2)
+
+std.deviation <- sqrt( css / (n-1) )
+
+# standard deviation
+std.deviation == sd(x)
+
+new.std.deviation <- 1
+new.mean <- 0
+
+# To scale each column to an arbitrary mean and standard deviation, 
+#   one can apply the following formulas
+newx <- scale(x) * std.deviation + new.mean
+newx
+str(newx)
+
+
+###########################################
 #             Data source 
 ###########################################
 
