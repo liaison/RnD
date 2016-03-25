@@ -1,4 +1,10 @@
+##
+##
+##  This script shows some examples on how to plot different kinds of graphs.
+##
+##
 
+library(ggplot2)
 
 ############# 
 # Compare the distribution of entropy and gini impurity functions which
@@ -119,12 +125,6 @@ par(oldPars)
 
 detach(mtcars)
 ################
-
-
-
-
-
-
 
 
 
