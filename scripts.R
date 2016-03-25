@@ -120,6 +120,36 @@ ints <- as.integer(digits)
 ints
 
 
+
+# Convert the string into date.
+# the default format of date is: yyyy-mm-dd
+defaultDate <- as.Date("2016-03-23")
+defaultDate
+class(defaultDate)
+
+
+# any date string with different formats, needs to be specified.
+mydate <- as.Date(c("03/23/2016"), "%m/%d/%Y")
+mydate
+class(mydate)
+
+# convert the date into string/characters
+mydate.str <- as.character(mydate)
+mydate.str
+class(mydate.str)
+
+
+today <- Sys.Date()
+
+date.str <- format(today, "%B %d %Y")
+date.str
+
+days.diff <- today - mydate
+days.diff
+
+difftime(today, mydate, units="weeks")
+
+
 ###########################################
 #             Data source 
 ###########################################
