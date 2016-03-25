@@ -2,7 +2,7 @@
 #
 # This script is intended to be "learning R in 5 minutes" show-case program.
 #
-#  It could teach a developer to quickly load the syntax rules of R into mind.
+#  It could teach a developer to quickly load (boottrap) the syntax rules of R into mind.
 #
 #
 
@@ -113,6 +113,26 @@ z
 # convert the integer into character
 digits <- as.character(z)
 digits
+
+# some string / characters operation
+str <- c("abc")
+str
+
+toupper(str)
+
+nchar(str) == 3
+
+substr(str, 1, 2) <- "ef"
+str
+
+grep("A", c("adddAe", "BEC", "KDDDa"), ignore.case = TRUE)
+
+paste("x", 1:3, sep=":")
+
+
+name <- "Bob"
+# concatenate the strings to the console or file (file="file.path")
+cat("Hello, ", name)
 
 
 # convert the character into integer
