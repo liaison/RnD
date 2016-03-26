@@ -2,7 +2,8 @@
 #
 # This script is intended to be "learning R in 5 minutes" show-case program.
 #
-#  It could teach a developer to quickly load (boottrap) the syntax rules of R into mind.
+#  It could teach a developer to quickly load (boottrap) the syntax rules 
+#    of R into mind.
 #
 #
 
@@ -48,8 +49,8 @@ mymatrix <- matrix(cells, nrow=2, ncol=2,
 
 # show attributes that are associated with an object.
 attributes(mymatrix)
-# one can change the value of a specific attribute with attr(obj, attrName) <- value
-
+# one can change the value of a specific attribute with 
+#   attr(obj, attrName) <- value
 
 dim1 <- c("A1", "A2")
 dim2 <- c("B1", "B2", "B3")
