@@ -198,6 +198,31 @@ newx <- scale(x) * std.deviation + new.mean
 newx
 str(newx)
 
+###########################################
+#             Control flow 
+###########################################
+
+# looping statements
+
+for(i in 1:3) print("Hello world.")
+
+i <- 3
+while( i > 0) { print("Hello world."); i <- i - 1 }
+
+# conditional statements
+# if(cond) statement1 else statement2
+# ifelse(cond, statement1, statement2)
+
+feelings <- c("sad", "afraid")
+for( i in feelings)
+  print(
+    switch(i,
+      happy = "I am glad you are happy",
+      afraid = "There is nothing to fear",
+      sad = "Cheer up",
+      angry = "Calm down now"
+    )
+  )
 
 ###########################################
 #             Data source 
