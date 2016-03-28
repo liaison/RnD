@@ -126,6 +126,63 @@ par(oldPars)
 detach(mtcars)
 ################
 
+# include the data set "arthritis"
+library(vcd)
+
+str(Arthritis)
+
+counts <- table(Arthritis$Improved)
+
+# the bar plots
+barplot(counts, main="Simple Bar Plot",
+        xlab = "Improvement", ylab = "Frequency")
+
+# We could plot the 'factor' column directly, without the table() function.
+plot(Arthritis$Improved, main = "Simple Bar Plot",
+     xlab = "Improved", ylab = "Frequency")
+
+
+barplot(counts, main="Simple Bar Plot", horiz = TRUE,
+        ylab = "Improvement", xlab = "Frequency")
+
+# stacked / grouped bar plots
+counts <- table(Arthritis$Improved, Arthritis$Treatment)
+
+counts
+str(counts)
+
+barplot(counts, main = "Stacked Bar Plot",
+        xlab = "Treatment", ylab = "Frequency",
+        col = c("red", "yellow", "green"),
+        legend = rownames(counts))
+
+barplot(counts, main = "Grouped Bar Plot",
+        xlab = "Treatment", ylab = "Frequency",
+        #col = c("red", "yellow", "green"),
+        legend = rownames(counts), beside = TRUE)
+
+# load the states information.
+states <- data.frame(state.region, state.x77)
+
+# calculate the mean illiteracy by the state.region group 
+means <- aggregate(states$Illiteracy, by=list(state.region), FUN=mean)
+means
+
+# order the means by the result column x
+means <- means[order(means$x),]
+
+# plot the bars, with the given labels.
+barplot(means$x,
+        names.arg = means$Group.1, # specify the labels.
+        cex.names =  0.8 # decrease the font size of labels
+        )
+# the following function is equivalent to the "main" attribute in barplot()
+title("Mean Illiteracy Rate")
+
+
+
+
+
 
 
 
