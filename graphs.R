@@ -161,6 +161,17 @@ barplot(counts, main = "Grouped Bar Plot",
         #col = c("red", "yellow", "green"),
         legend = rownames(counts), beside = TRUE)
 
+
+################
+# spinogram is the scaled bar plots.
+
+attach(Arthritis)
+another.counts <- table(Treatment, Improved)
+spine(another.counts, main = "Spinogram Example")
+detach(Arthritis)
+
+################
+
 # load the states information.
 states <- data.frame(state.region, state.x77)
 
