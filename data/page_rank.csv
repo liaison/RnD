@@ -1,6 +1,7 @@
 #, Format of the input
 #, page -> another_page
 #, This is a circle. The final PageRank values should be equal.
+Node, Neighbor
 A, B
 B, C
 C, A
