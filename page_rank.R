@@ -47,6 +47,10 @@ page.rank <- merge(page.rank.score, neighbor.count, all.x = TRUE)
 row.names(page.rank) <- nodes.set
 page.rank
 
+plot(page.rank$Score, ylim=c(0, 1),
+     xlab = "Nodes",
+     ylab = "PageRank Score")
+
 
 while(TRUE) {
 
@@ -70,6 +74,9 @@ while(TRUE) {
   new.score <- init.score + contrib.score 
 
   print(page.rank)
+
+  # plot the new values
+  points(page.rank$Score, col="red")
 
   if (all(page.rank$Score == new.score)) {
     break
