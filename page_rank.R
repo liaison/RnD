@@ -1,7 +1,7 @@
 library(dplyr)
 
 # set the precision of numeric calculation
-options(digits=7)
+options(digits=5)
 
 input <- read.csv("data/page_rank.csv",
                   comment.char = "#",
@@ -47,9 +47,18 @@ page.rank <- merge(page.rank.score, neighbor.count, all.x = TRUE)
 row.names(page.rank) <- nodes.set
 page.rank
 
-plot(page.rank$Score, ylim=c(0, 1),
+
+plot(page.rank$Score,
+     ylim=c(0, 1),
      xlab = "Nodes",
-     ylab = "PageRank Score")
+     ylab = "PageRank Score",
+     pch = 1,
+     type = "n",
+     # remove the numbering on X axis.
+     xaxt = "n")
+
+# Draw the customized X axis, on the bottom (1)
+axis(1, at=page.rank$Node,labels=page.rank$Node)
 
 
 while(TRUE) {
@@ -71,7 +80,7 @@ while(TRUE) {
 
   init.score <- (1-damping.factor) / length(nodes.set)
 
-  new.score <- init.score + contrib.score 
+  new.score <- init.score + contrib.score
 
   print(page.rank)
 
