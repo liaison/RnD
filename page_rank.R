@@ -55,7 +55,8 @@ plot(page.rank$Score,
      pch = 1,
      type = "n",
      # remove the numbering on X axis.
-     xaxt = "n")
+     xaxt = "n",
+     main = "Converge of Page Ranking")
 
 # Draw the customized X axis, on the bottom (1)
 axis(1, at=page.rank$Node,labels=page.rank$Node)
