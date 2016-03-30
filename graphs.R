@@ -190,11 +190,36 @@ barplot(means$x,
 # the following function is equivalent to the "main" attribute in barplot()
 title("Mean Illiteracy Rate")
 
+################
+# pie charts
+# set the layout to put 2*2 graphs
+par(mfrow=c(2, 2))
 
+slices <- c(10, 12, 4, 16, 8)
+labels.country <- c("US", "UK", "Australia", "Germany", "France")
 
+pie(slices, labels.country, col = rainbow(length(slices)),
+    main = "Simple Pie Chart")
 
+percentage <- round(slices / sum(slices) * 100)
+percentage
 
+labels.percentage <- paste(labels.country, " ", percentage, "%", sep="")
+pie(slices, labels=labels.percentage,
+    main = "Pie Chart with Percentage")
 
+# 3D pie chart
+library(plotrix)
+pie3D(slices, labels=labels.percentage, explode=0.2,
+      main = "3D Pie Chart", labelcex = 0.9)
+
+# create a pie chart out of a table
+pie.table <- table(state.region)
+str(pie.table)
+pie.labels <- paste(names(pie.table), "\n", pie.table, sep="")
+
+pie(pie.table, labels = pie.labels,
+    main= "Pie Chart from a Table\n (with sample sizes)")
 
 
 
