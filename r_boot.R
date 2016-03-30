@@ -128,9 +128,10 @@ elem.title <-mylist[["title"]]
 emptyNum <- numeric()
 emptyNum
 
-
+# create a sequence (vector) of numbers.
 z <- 0:9
 z
+
 # convert the integer into character
 digits <- as.character(z)
 digits
@@ -148,6 +149,7 @@ str
 
 grep("A", c("adddAe", "BEC", "KDDDa"), ignore.case = TRUE)
 
+# paste two vectors together with the separator.
 paste("x", 1:3, sep=":")
 
 
