@@ -186,6 +186,12 @@ css <- sum((x-mx)^2)
 
 std.deviation <- sqrt( css / (n-1) )
 
+x.scaled <- scale(x)
+# manually do the scaling (normalization, z-scores)
+x.manual.scale <- (x - mean(x)) / sd(x)
+x.scaled == x.manual.scale
+
+
 # standard deviation
 std.deviation == sd(x)
 
