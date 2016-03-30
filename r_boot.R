@@ -12,15 +12,30 @@
 #           basic data structures 
 ###########################################
 
+## Note: it is sort of a convention to name the variables in the format of x.y.z... in R.
+
 
 ## vector
+#  C(...) is a function that creates a vector out of a list of literals.
 cells <- c(1, 2, 3, 4)
-rnames <- c("R1", "R2")
-cnames <- c("C1", "C2")
 
 
+# Retrieve the element with the number index
+# the indice of the elements start from one.
+cells.elem1 <- cells[1]
 
-nums <- seq(1:100)
+
+# index each elements with a label, so we could refer to them with a name, instead of position.
+cells.index <- c("A", "B", "C", "D")
+names(cells) <- cells.index
+cells
+
+# the values should be the same.
+cells.elem1 == cells["A"]
+
+
+# create a sequence (vector), with a given step length.
+nums <- seq(from=1, to=100, by=1)
 
 # exclude the first 5 elements
 exclude.nums <- nums[-(1:5)]
@@ -34,18 +49,23 @@ nums[102] <- 1
 nums
 
 
-# retrieve all the even number from a vector that contains NA.
+# Get a vector of boolean value indicating the result of comparision for each element.
+na.vec <- is.na(nums)
+na.vec
+
+# retrieve all the even number.
+# Here we retrieve the corresponding elements with a boolean vector.
 even.nums <- nums[ !is.na(nums) & nums %% 2 == 0 ]
 even.nums
 
 
-# the indice of the elements start from one.
-value1 <- cells[1]
+matrix.rnames <- c("R1", "R2")
+matrix.cnames <- c("C1", "C2")
 
 ## matrix
 # by default, the matrix is constructed by column.
 mymatrix <- matrix(cells, nrow=2, ncol=2, 
-  byrow=TRUE, dimnames=list(rnames, cnames))
+                   byrow=TRUE, dimnames=list(matrix.rnames, matrix.cnames))
 
 # show attributes that are associated with an object.
 attributes(mymatrix)
