@@ -198,12 +198,14 @@ par(mfrow=c(2, 2))
 slices <- c(10, 12, 4, 16, 8)
 labels.country <- c("US", "UK", "Australia", "Germany", "France")
 
+# pie chart with vectors
 pie(slices, labels.country, col = rainbow(length(slices)),
     main = "Simple Pie Chart")
 
 percentage <- round(slices / sum(slices) * 100)
 percentage
 
+# pie chart with percentage labels
 labels.percentage <- paste(labels.country, " ", percentage, "%", sep="")
 pie(slices, labels=labels.percentage,
     main = "Pie Chart with Percentage")
@@ -220,6 +222,11 @@ pie.labels <- paste(names(pie.table), "\n", pie.table, sep="")
 
 pie(pie.table, labels = pie.labels,
     main= "Pie Chart from a Table\n (with sample sizes)")
+
+######
+# a special pie chart from plotrix package
+fan.plot(slices, labels = labels.country, main = "Fan Plot")
+
 
 
 
