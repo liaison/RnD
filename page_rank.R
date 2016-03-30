@@ -58,6 +58,9 @@ plot(page.rank$Score,
      xaxt = "n",
      main = "Converge of Page Ranking")
 
+# add minor ticks to the Y axis
+minor.tick(ny=5, nx=1)
+
 # Draw the customized X axis, on the bottom (1)
 axis(1, at=page.rank$Node,labels=page.rank$Node)
 
