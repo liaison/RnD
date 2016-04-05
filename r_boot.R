@@ -12,7 +12,8 @@
 #           basic data structures 
 ###########################################
 
-## Note: it is sort of a convention to name the variables in the format of x.y.z... in R.
+## Note: it is sort of a convention to name the variables
+#   in the format of x.y.z... in R.
 
 
 ## vector
@@ -25,13 +26,14 @@ cells <- c(1, 2, 3, 4)
 cells.elem1 <- cells[1]
 
 
-# index each elements with a label, so we could refer to them with a name, instead of position.
+# index each elements with a label, so we could refer to them with a name,
+#  instead of the position index.
 cells.index <- c("A", "B", "C", "D")
 names(cells) <- cells.index
 cells
 
-# the values should be the same.
-cells.elem1 == cells["A"]
+# they are referring to the same element.
+cells[1] == cells["A"]
 
 
 # create a sequence (vector), with a given step length.
@@ -49,7 +51,8 @@ nums[102] <- 1
 nums
 
 
-# Get a vector of boolean value indicating the result of comparision for each element.
+# Get a vector of boolean value indicating the result of comparision
+#   for each element.
 na.vec <- is.na(nums)
 na.vec
 
@@ -90,7 +93,7 @@ patientData <- data.frame(patientID, status)
 # describe the structure of the data frame.
 str(patientData)
 
-# the reference of the columns/variables within a data frame.
+# the reference of the columns within a dataframe either by index or name.
 col.status <- patientData[[2]]
 col.status <- patientData$status
 col.status
