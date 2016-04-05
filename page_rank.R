@@ -59,6 +59,7 @@ plot(page.rank$Score,
      main = "Converge of Page Ranking")
 
 # add minor ticks to the Y axis
+library(Hmisc)
 minor.tick(ny=5, nx=1)
 
 # Draw the customized X axis, on the bottom (1)
