@@ -203,6 +203,7 @@ difftime(today, mydate, units="weeks")
 x <- 1:8
 
 mx <- mean(x)
+mx
 
 # the length / size of a vector
 n <- length(x)
@@ -210,6 +211,9 @@ n <- length(x)
 css <- sum((x-mx)^2)
 
 std.deviation <- sqrt( css / (n-1) )
+# standard deviation
+std.deviation == sd(x)
+
 
 x.scaled <- scale(x)
 # manually do the scaling (normalization, z-scores)
@@ -217,8 +221,6 @@ x.manual.scale <- (x - mean(x)) / sd(x)
 x.scaled == x.manual.scale
 
 
-# standard deviation
-std.deviation == sd(x)
 
 new.std.deviation <- 1
 new.mean <- 0
@@ -238,7 +240,7 @@ str(newx)
 for(i in 1:3) print("Hello world.")
 
 i <- 3
-while( i > 0) { print("Hello world."); i <- i - 1 }
+while(i > 0) { print("Hello world."); i <- i - 1 }
 
 # conditional statements
 # if(cond) statement1 else statement2
