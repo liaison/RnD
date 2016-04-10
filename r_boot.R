@@ -281,6 +281,22 @@ mydata <- read.table(header=TRUE, text=mydata.txt)
 mydata
 
 
+###########################################
+#           statistic functions 
+###########################################
+library(vcd)
+
+# frequency counts with the table() function
+mytable <- with(Arthritis, table(Improved))
+
+# turn the frequencies into proportions
+prop.table(mytable)
+
+
+library(gmodels)
+CrossTable(Arthritis$Treatment, Arthritis$Improved)
+
+
 
 
 
