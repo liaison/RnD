@@ -27,7 +27,7 @@ plot(x, entropy, type="l", col="red",
 # Plot the gini_impurity further.
 lines(x, gini_impurity, col="blue", lty=20)
 
-legend(0.32, 0.25, c("Entropy", "Gini Impurity"),
+legend(0.37, 0.25, c("Entropy", "Gini Impurity"),
 	col=c("red", "blue"), lty=c(1, 20))
 
 
@@ -250,7 +250,7 @@ hist(mtcars$mpg,
 # histogram with a rug plot
 hist(mtcars$mpg,
      freq=FALSE,
-     break=12,
+     breaks=12,
      col="red",
      xlab="Miles Per Gallon",
      main="Histogram, rug plot, density curve")
