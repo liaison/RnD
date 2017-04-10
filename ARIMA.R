@@ -9,6 +9,7 @@
 #
 #
 #
+data(AirPassengers)
 class(AirPassengers)
 
 
@@ -48,7 +49,7 @@ pacf(diff(log(AirPassengers)))
 
 
 # set (p, d, q) as (0, 1, 1)
-fit <- arima(log(AirPassengers), c(0,0,1), seasonal = list(order = c(0, 1, 1), period=12))
+fit <- arima(log(AirPassengers), c(0,1,1), seasonal = list(order = c(0, 1, 1), period=12))
 
 # predict for the next 10 years
 pred <- predict(fit, n.ahead = 10 * 12)
